@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SRC.gd" type="Script" id=1]
+[ext_resource path="res://DDU spil grafik/Fjender/Fjende_SRC.png" type="Texture" id=2]
+
+[node name="SRC" type="KinematicBody2D"]
+position = Vector2( 864, 640 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 32, -8, 31.2, -8, 26, -6.5, 26, 28.8, 22.8, 32, -32, 32, -32, 12, -31.4, 12, -28, 10.6, -28, -29, -24, -32, 32, -32 )
+__meta__ = {
+"_edit_group_": true
+}

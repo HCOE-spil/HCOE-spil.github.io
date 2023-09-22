@@ -1,0 +1,70 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Enemies.tscn" type="PackedScene" id=1]
+[ext_resource path="res://SU.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://TileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://SUcounter.gd" type="Script" id=6]
+[ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Healthcounter.gd" type="Script" id=8]
+[ext_resource path="res://DDU spil grafik/BankWealth.png" type="Texture" id=9]
+[ext_resource path="res://DDU spil grafik/HealthKarakterBar.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 7 )
+
+[node name="mainWorld" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource( 4 )]
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 40, 664 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="Banken" type="Sprite" parent="Player/Camera2D"]
+position = Vector2( -192, -56 )
+texture = ExtResource( 9 )
+
+[node name="SUcounteren" type="Label" parent="Player/Camera2D/Banken"]
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 48.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+script = ExtResource( 6 )
+
+[node name="Karakterhue" type="Sprite" parent="Player/Camera2D"]
+position = Vector2( -198.812, -104 )
+scale = Vector2( 1.1351, 1 )
+texture = ExtResource( 10 )
+
+[node name="Healthcounter" type="Label" parent="Player/Camera2D/Karakterhue"]
+margin_left = 8.0
+margin_top = -17.0
+margin_right = 50.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 2 )
+text = "100"
+align = 1
+valign = 1
+script = ExtResource( 8 )
+
+[node name="Enemies" parent="." instance=ExtResource( 1 )]
+position = Vector2( 8, 4 )
+
+[node name="SU" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3, -49 )
+
+[node name="GUI" parent="." instance=ExtResource( 3 )]

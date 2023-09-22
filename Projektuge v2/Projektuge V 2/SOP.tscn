@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SOP.gd" type="Script" id=1]
+[ext_resource path="res://DDU spil grafik/Fjender/Fjende_SOP.png" type="Texture" id=2]
+
+[node name="SOP" type="KinematicBody2D"]
+position = Vector2( 880, 584 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 41, -41.1, 42, -40.4, 42, -12.6, 40.2, -9, 33, -9, 33, 36.8, 27.8, 42, -40, 42, -42, 40.5, -42, 16.9, -40.1, 14, -35, 14, -35, -36.8, -30, -41.8, 41, -42 )
+__meta__ = {
+"_edit_group_": true
+}
